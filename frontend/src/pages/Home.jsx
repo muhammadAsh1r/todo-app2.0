@@ -21,7 +21,7 @@ const Home = () => {
   const fetchTasks = async () => {
     const token = localStorage.getItem("authToken");
     try {
-      const response = await axios.get("http://localhost:3000/api/tasks", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/tasks`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(response.data.tasks);
@@ -72,7 +72,7 @@ const Home = () => {
       if (currentTask._id) {
         // Update existing task
         await axios.put(
-          `http://localhost:3000/api/tasks/${currentTask._id}`,
+          `${import.meta.env.VITE_API_URL}/api/tasks/${currentTask._id}`,
           {
             title: currentTask.title,
             description: currentTask.description,
@@ -83,7 +83,7 @@ const Home = () => {
       } else {
         // Add new task
         await axios.post(
-          "http://localhost:3000/api/tasks",
+          `${import.meta.env.VITE_API_URL}/api/tasks`,
           {
             title: currentTask.title,
             description: currentTask.description,
@@ -112,7 +112,7 @@ const Home = () => {
   const handleDeleteTask = async (taskId) => {
     const token = localStorage.getItem("authToken");
     try {
-      await axios.delete(`http://localhost:3000/api/tasks/${taskId}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks();
