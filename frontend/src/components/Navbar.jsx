@@ -14,11 +14,12 @@ const Navbar = () => {
   return (
     <nav
       className="
-        bg-[rgba(255,255,255,0.1)] 
-        backdrop-blur-sm 
-        border-b border-[#00FFE7] 
+        sticky top-0 z-50
+        bg-[rgba(15,15,28,0.8)] 
+        backdrop-blur-md 
+        border-b border-[#00FFE7]/30 
         text-[#A0F0ED] 
-        px-6 py-3 
+        px-4 md:px-6 py-3 
         flex items-center justify-between
       "
     >

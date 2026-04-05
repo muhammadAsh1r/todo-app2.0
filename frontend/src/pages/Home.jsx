@@ -131,15 +131,15 @@ const Home = () => {
   });
 
   return (
-    <div className="flex min-h-screen font-sans bg-[#0F0F1C] text-[#A0F0ED]">
-      {/* Left Side */}
-      <div className="w-[30%] p-4 bg-[rgba(255,255,255,0.05)] border-r border-[#00FFE7] flex flex-col gap-6">
+    <div className="flex flex-col lg:flex-row min-h-screen font-sans bg-[#0F0F1C] text-[#A0F0ED]">
+      {/* Left Side (Sidebar) */}
+      <div className="w-full lg:w-[30%] p-4 bg-[rgba(255,255,255,0.05)] border-b lg:border-b-0 lg:border-r border-[#00FFE7] flex flex-col gap-6">
         <h2 className="text-xl font-semibold text-[#00D1D1]">Navigation</h2>
         <TaskSummary tasks={tasks} onFilterChange={setFilter} />{" "}
       </div>
 
-      {/* Right Side */}
-      <div className="w-[70%] p-6 relative">
+      {/* Right Side (Main Content) */}
+      <div className="w-full lg:w-[70%] p-4 lg:p-6 relative">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold text-[#00D1D1]">Tasks</h2>
           <button
